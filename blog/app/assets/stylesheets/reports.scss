@@ -1,0 +1,554 @@
+$desktop-size: 376px;
+$text-color: #333333;
+$text-size: 20px;
+
+@mixin containers($width, $height) {
+  width: $width;
+  height: $height; 
+}  
+
+.icons-img {
+  @include containers(100%, 100%);
+  margin: 0; 
+}
+
+@mixin text-font($font) {
+  font-weight: $font; 
+}
+
+.flex-center-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-center-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;  
+}
+
+body {
+  padding: 0;
+  margin: 0; 
+  box-sizing: border-box; 
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  
+}
+
+.container-flex {
+  width: 100%;
+  margin: auto;
+  @extend .flex-center-column;
+
+  @media screen and (min-width: $desktop-size) {
+    max-width: 750px;  
+  }
+}
+
+.header-container {
+  @include containers(100%, 50px);
+  margin-top: 8px; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  box-shadow:0px 2px 2px #c3c3c3;
+  
+  @media screen and (min-width: $desktop-size) {
+    display: none;
+  }
+}
+
+.header-container .header-icons-arrow {
+  @include containers(50px, 30px);
+}
+
+.header-container .header-icons-homie {
+  @include containers(80px, 35px);
+}
+
+.header-container .header-icons-user {
+  @include containers(30px, 30px); 
+}
+
+.header-container .header-icons img {
+  @extend .icons-img;    
+}
+
+.header-container .header-icons-homie img {
+  @extend .icons-img;
+}
+
+.header-container .header-icons-user img {
+  @extend .icons-img;
+}
+
+.owner-reports {
+  width: 85%;
+  @extend .flex-center-column;
+  margin-top: 15px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  box-shadow: 0px 0px 1px 1px #cccccc;
+
+  @media screen and (min-width: $desktop-size) {
+    width: 100%;
+    height: 150px;
+    margin-top: 5px; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.owner-reports div div h2 {
+  padding: 0;
+  margin:0px 0px 5px 0px;
+  font-size: $text-size;
+  color: $text-color;
+  
+  @media screen and (min-width: $desktop-size) {
+    font-size: 40px; 
+    margin-top: 10px;
+    margin-left: 2px;
+    text-align: initial;
+  }
+}
+
+.owner-reports div div span {
+  text-align: center;  
+  font-weight: 200;
+  color: $text-color;
+  font-size: 13px;
+  padding: 0px 6px;
+
+  @media screen and (min-width: $desktop-size) {
+    font-size: 14.5px; 
+    padding: 0px 10px 0px 0px;
+    margin: 0;
+    text-align: initial;
+  }
+}
+
+.owner-reports div div p {
+  text-align: center;  
+  font-weight: 200;
+  color: $text-color;
+  font-size: 13px;
+  padding: 0px 15px;
+  margin: 0;
+
+  @media screen and (min-width: $desktop-size) {
+    font-size: 14.5px; 
+    padding: 0px 10px 0px 0px;
+    margin: 0;
+    text-align: initial;
+  }
+}
+
+.owner-reports .owner-report {
+  display: none;
+
+  @media screen and (min-width: $desktop-size) {
+    display: block;
+    font-size: 20px; 
+    width: 12%;
+    height: 85px;
+  }
+}
+
+.owner-reports div{
+  text-align: center; 
+  
+  @media screen and (min-width: $desktop-size) {
+    width: 65%;
+    display: flex;
+    padding: 0;
+    margin: 0px 0px 0px 10px;
+    flex-direction: column;
+  }
+}
+
+.owner-reports div div {
+  width: 100%;
+}
+
+.owner-reports .owner-report img {
+  @extend .icons-img;  
+}
+
+.information-section {
+  width: 100%;
+  margin-top: 5px;
+  
+  @media screen and (min-width: $desktop-size) {
+    width: 100%;
+    display: flex;
+    flex-direction: row; 
+  }
+}
+
+.information-section .ranges {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+
+  @media screen and (min-width: $desktop-size) {
+    width: 41%;  
+  }
+}
+
+.information-section .ranges .range {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+}
+
+.information-section .ranges .range .range-number {
+  width: 63%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  font-size: 10px; 
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+
+.information-section .ranges .range .range-text {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; 
+  font-size: 9px; 
+  margin-top: 2px;
+}
+
+.information-section .ranges .range .range-container {
+  width: 66%;
+  height: 10px;  
+}
+
+.information-section .ranges .range .range-container img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.information-section .ranges .owner-range {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  box-shadow: 0px 0px 1px 1px #cccccc;
+
+  @media screen and (min-width: $desktop-size) {
+    width: 100%;
+    height: 320px;
+    padding-top: 40px;
+  }
+}
+
+.information-section .ranges .owner-range .circle-number {
+  width: 150px;
+  height: 150px;
+}
+
+.information-section .ranges .owner-range .circle-number img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position: relative;
+}
+
+.information-section .ranges .owner-range .circle-number span {
+  position: relative;
+  top: -95px;
+  left: 35px;
+  font-size: 36px;
+  font-weight: bold;  
+}
+
+.information-section .ranges .range-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+
+.information-section .ranges .points {
+  width: 82%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px; 
+}
+
+.information-section .ranges .points h2 {
+  font-size: 20px; 
+  font-weight: 600; 
+
+  @media screen and (min-width: $desktop-size) {
+    font-size: 14px;
+  }
+}
+
+.information-section .ranges .points span {
+  font-size: 13px;
+  text-align: center;
+
+  @media screen and (min-width: $desktop-size) {
+    width: 115%;
+    font-size: 12px;
+  }
+}
+
+.information-section .ranges .information-range {
+  width: 85%;
+  height: 300px;
+  background-color: rgb(205, 215, 52);
+  box-shadow: 0px 0px 1px 1px #cccccc; 
+  
+  @media screen and (min-width: $desktop-size) {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.information-section .ranges .information-range .information {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  margin-top: 60px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0px 0px 0px 30px;
+  font-size: 14px;
+  box-sizing: border-box;  
+}
+
+.information-section .personal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  @media screen and (min-width: $desktop-size) {
+    width: 58%;
+    margin-left: 1%;
+    padding: 0;  
+  }
+}
+
+.information-section .personal .user-personal {
+  width: 85%;
+  margin-top: 8px;
+  padding-top: 15px; 
+  padding-bottom: 15px; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0px 0px 1px 1px #cccccc;
+
+  @media screen and (min-width: $desktop-size) {
+    width: 98%;
+    height: 260px;
+    flex-direction: column;
+    margin-left: 1%;   
+  }
+}
+
+.information-section .personal .user-personal .user-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px black solid;
+
+  @media screen and (min-width: $desktop-size) {
+    width: 100px;
+    height: 100px;   
+  }
+}
+
+.information-section .personal .user-personal .user-img img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.information-section .personal .user-personal .user-info {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: $desktop-size) {
+    width: 90%;
+    align-items: center;   
+  }
+}
+
+.information-section .personal .user-personal .user-info .name-user {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.information-section .personal .user-personal .user-info .city {
+  font-size: 14px;
+  margin-top: 10px;
+
+  @media screen and (min-width: $desktop-size) {
+    margin-top: 2px;  
+  }
+}
+
+.information-section .personal .user-personal .user-info .cash {
+  font-size: 15px;  
+  margin-top: 10px; 
+  
+  @media screen and (min-width: $desktop-size) {
+    margin-top: 2px;  
+  }
+} 
+
+.information-section .personal .information-personal {
+  width: 85%;
+  height: 450px;
+  padding-top: 4px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin-top: 8px;
+  box-shadow: 0px 0px 1px 1px #cccccc;
+  
+  @media screen and (min-width: $desktop-size) {
+    width: 98%;
+    margin-top: 10px;
+    margin-left: 1%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.information-personal .info-container {
+  width: 95%;
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.information-personal .info-container .info-img {
+  width: 20px;
+  height: 20px;   
+}
+
+.information-personal .info-container .info-img img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.information-personal .info-container .info {
+  width: 85%;
+  margin-left: 10px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column; 
+}
+
+.information-personal .info-container .info .city {
+  margin-top: 2px;  
+}
+
+.homie {
+  width: 85%;
+  height: 165px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px; 
+  box-shadow: 0px 0px 1px 1px #cccccc; 
+
+  @media screen and (min-width: $desktop-size) {
+    width: 100%;
+    height: 150px;
+  }
+}
+
+.homie .homie-info {
+  width: 95%; 
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  @media screen and (min-width: $desktop-size) {
+    font-size: 19px;
+  }
+}
+
+.homie .homie-info div {
+  width: 45%;
+  height: 30px;  
+  margin-top: 10px;
+
+  @media screen and (min-width: $desktop-size) {
+    width: 18%;
+    margin-top: 8px;
+  }
+}
+
+.homie .homie-info div img {
+  width: 100%;
+  height: 100%;
+  margin: 0;  
+}
+
+.save-owner {
+  width: 90%;
+  margin-top: 10px;
+  margin-bottom: 3px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  @media screen and (min-width: $desktop-size) {
+    width: 100%;
+  }
+}
+
+.save-owner a {
+  width: 100px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px 1px #cccccc;
+
+  @media screen and (min-width: $desktop-size) {
+    position: relative;
+    left: -7px;
+  }
+}
